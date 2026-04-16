@@ -56,12 +56,7 @@
         }
         .profile-container:hover .profile-overlay { opacity: 1; }
 
-        /* Mobile Optimization */
-        @media (max-width: 768px) {
-            .content-grid { grid-template-columns: 1fr !important; }
-            .sidebar-hide { display: none; }
-        }
-
+        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
@@ -76,25 +71,26 @@
         </div>
         <div class="flex-1">
             <p id="notif-title" class="font-black text-[9px] uppercase tracking-[0.2em] text-blue-400">Reminder</p>
-            <p id="notif-message" class="font-bold text-sm leading-tight">Task starting in 5 mins!</p>
-            <p id="notif-phone" class="text-[8px] font-black text-slate-500 mt-1 uppercase">Cloud Alert System</p>
+            <p id="notif-message" class="font-bold text-sm leading-tight">Task Alert!</p>
+            <p id="notif-phone" class="text-[8px] font-black text-slate-500 mt-1 uppercase">Cloud Notification</p>
         </div>
     </div>
 
-    <!-- Login Screen -->
+    <!-- Login/Lock Screen Overlay -->
     <div id="login-screen" class="fixed inset-0 bg-white z-[500] flex items-center justify-center p-4 overflow-y-auto">
-        <div class="w-full max-w-lg bg-white rounded-[2.5rem] shadow-2xl border p-6 md:p-10 space-y-6 text-center my-8">
+        <div class="w-full max-w-lg bg-white rounded-[2.5rem] shadow-2xl border p-6 md:p-10 space-y-6 text-center">
             <div class="w-16 h-16 bg-blue-600 rounded-3xl flex items-center justify-center text-white text-3xl font-black shadow-xl mx-auto transform rotate-3">B</div>
             <h1 class="text-3xl font-black uppercase tracking-tight rainbow-text">Bye-Study Cloud</h1>
             
-            <!-- Description Section -->
-            <div class="text-left bg-slate-50 p-5 rounded-2xl border text-sm leading-relaxed text-slate-600">
-                <p class="font-bold text-blue-600 mb-2 uppercase tracking-widest text-[10px]">අධ්‍යාපනයේ වැදගත්කම</p>
-                වර්තමාන තරඟකාරී ලෝකය තුළ අධ්‍යාපනය යනු හුදෙක් දැනුම රැස් කිරීමක් පමණක් නොව, ඔබේ අනාගතය සාර්ථක කර ගැනීමට ඇති එකම දොරටුවයි. තාක්ෂණය සමඟ මුසුවූ විධිමත් අධ්‍යාපනයක් තුළින් ලෝකය ජය ගැනීමට අවශ්‍ය පදනම වැටේ. 
+            <!-- Educational Description -->
+            <div class="text-left bg-slate-50 p-5 rounded-2xl border text-sm leading-relaxed text-slate-600 max-h-48 overflow-y-auto">
+                <p class="font-bold text-blue-600 mb-2 uppercase tracking-widest text-[10px]">අධ්‍යාපනයේ වැදගත්කම සහ Bye-Study Cloud</p>
+                වර්තමාන තරඟකාරී ලෝකය තුළ අධ්‍යාපනය යනු හුදෙක් දැනුම රැස් කිරීමක් පමණක් නොව, එය ඔබේ අනාගතය සාර්ථක කර ගැනීමට ඇති ප්‍රධානතම දොරටුවයි. තාක්ෂණය සමඟ මුසුවූ විධිමත් අධ්‍යාපනයක් තුළින් ලෝකය ජය ගැනීමට අවශ්‍ය පදනම වැටේ. අධ්‍යාපනය යනු පුද්ගලයෙකුගේ චින්තනය පෝෂණය කරන අතරම සමාජය තුළ ගෞරවනීය තැනක් ලබා ගැනීමට උපකාරී වන වටිනාම සම්පතයි. 
                 <br><br>
-                <b>Bye-Study Cloud</b> යෙදුම නිර්මාණය කර ඇත්තේ ශිෂ්‍ය ඔබගේ අධ්‍යයන කටයුතු වඩාත් ක්‍රමවත් හා පහසු කිරීමටයි. මෙහි ඇති කාලසටහන් කළමනාකරණය, ලකුණු විශ්ලේෂණය සහ ක්ලවුඩ් සටහන් (Notes) තැබීමේ පහසුකම හරහා ඔබට ඕනෑම තැනක සිට ඔබගේ ප්‍රගතිය නිරීක්ෂණය කළ හැකිය. අධ්‍යාපනය යනු අඳුරෙන් එළියට යන මාවතයි. මෙම ඩිජිටල් සහකරු සමඟ ඔබේ ගමන අදම ආරම්භ කර පරමාදර්ශී ශිෂ්‍යයෙකු වන්න.
+                <b>Bye-Study Cloud</b> යෙදුම නිර්මාණය කර ඇත්තේ ශිෂ්‍ය ඔබගේ අධ්‍යයන කටයුතු වඩාත් ක්‍රමවත් හා ඵලදායී කිරීමටයි. මෙහි ඇති කාලසටහන් කළමනාකරණය, ලකුණු විශ්ලේෂණය සහ ක්ලවුඩ් සටහන් (Notes) තැබීමේ පහසුකම හරහා ඔබට ඕනෑම වේලාවක ඕනෑම තැනක සිට ඔබගේ ප්‍රගතිය නිරීක්ෂණය කළ හැකිය. අධ්‍යාපනය යනු අඳුරෙන් එළියට යන මාවත වන අතර මෙම ඩිජිටල් සහකරු ඔබේ එම ගමන පහසු කරනු ඇත. අදම ඔබේ අධ්‍යයන සැලසුම් මෙහි සටහන් කර සාර්ථක ශිෂ්‍යයෙකු වීමට පියවර තබන්න.
             </div>
 
+            <!-- New User Registration Fields -->
             <div id="setup-fields" class="hidden space-y-4 text-left">
                 <div class="grid grid-cols-2 gap-3">
                     <input type="text" id="login-fname" placeholder="FIRST NAME" class="w-full p-4 bg-slate-50 border rounded-2xl font-bold outline-none text-sm transition focus:border-blue-500">
@@ -105,33 +101,23 @@
                     <input type="tel" id="login-phone" placeholder="PHONE (7XXXXXXXX)" class="w-full p-4 pl-12 bg-slate-50 border rounded-2xl font-bold outline-none text-sm transition focus:border-blue-500">
                 </div>
                 <input type="text" id="login-school" placeholder="SCHOOL NAME" class="w-full p-4 bg-slate-50 border rounded-2xl font-bold outline-none text-sm transition focus:border-blue-500">
-                <select id="login-district" class="w-full p-4 bg-slate-50 border rounded-2xl font-bold outline-none text-sm transition focus:border-blue-500">
-                    <option value="" disabled selected>SELECT DISTRICT</option>
-                    <option value="Colombo">Colombo</option><option value="Gampaha">Gampaha</option><option value="Kalutara">Kalutara</option>
-                    <option value="Kandy">Kandy</option><option value="Matale">Matale</option><option value="Galle">Galle</option>
-                    <option value="Matara">Matara</option><option value="Kurunegala">Kurunegala</option><option value="Anuradhapura">Anuradhapura</option>
-                    <option value="Badulla">Badulla</option><option value="Ratnapura">Ratnapura</option><option value="Kegalle">Kegalle</option>
-                </select>
-                
-                <!-- Password Fields -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <input type="password" id="login-pass" placeholder="PASSWORD" class="w-full p-4 bg-slate-50 border rounded-2xl font-bold outline-none text-sm transition focus:border-blue-500">
                     <input type="password" id="login-pass-confirm" placeholder="CONFIRM PASSWORD" class="w-full p-4 bg-slate-50 border rounded-2xl font-bold outline-none text-sm transition focus:border-blue-500">
                 </div>
-
-                <button id="start-btn" class="w-full bg-slate-900 text-white py-4 rounded-2xl font-black uppercase tracking-widest shadow-2xl transition-all active:scale-95 text-sm hover:bg-black">Set Up Account</button>
+                <button id="start-btn" class="w-full bg-slate-900 text-white py-4 rounded-2xl font-black uppercase tracking-widest shadow-2xl transition-all active:scale-95 text-sm hover:bg-black">Create My Account</button>
             </div>
 
-            <!-- Lock Screen Interface (Already Registered) -->
+            <!-- Lock Screen Interface (Existing Users) -->
             <div id="lock-screen" class="hidden space-y-4">
-                <p id="lock-welcome" class="font-bold text-slate-500 text-sm">Welcome back, User</p>
+                <p id="lock-welcome" class="font-bold text-slate-500 text-sm">Hi, Secure Login Required</p>
                 <input type="password" id="unlock-pass" placeholder="ENTER PASSWORD" class="w-full p-4 bg-slate-50 border rounded-2xl font-bold outline-none text-sm transition focus:border-blue-500 text-center">
-                <button id="unlock-btn" class="w-full bg-blue-600 text-white py-4 rounded-2xl font-black uppercase tracking-widest shadow-2xl text-sm">Unlock System</button>
+                <button id="unlock-btn" class="w-full bg-blue-600 text-white py-4 rounded-2xl font-black uppercase tracking-widest shadow-2xl text-sm">Unlock Dashboard</button>
             </div>
 
             <div id="auth-loading" class="py-10">
                 <i class="fas fa-circle-notch fa-spin text-blue-600 text-4xl"></i>
-                <p class="text-[10px] font-bold text-slate-400 mt-4 tracking-widest uppercase">Connecting to Secure Server...</p>
+                <p class="text-[10px] font-bold text-slate-400 mt-4 tracking-widest uppercase">Connecting to Secure Cloud...</p>
             </div>
         </div>
     </div>
@@ -177,8 +163,8 @@
                 <h2 id="current-tab-title" class="text-xl font-extrabold uppercase tracking-tight">Dashboard</h2>
                 <div class="flex items-center space-x-4 border-l pl-4">
                     <div class="hidden sm:block text-right leading-tight">
-                        <p id="header-user-name" class="text-sm font-black">...</p>
-                        <p id="header-user-info" class="text-[9px] text-slate-400 uppercase font-bold tracking-tight">...</p>
+                        <p id="header-user-name" class="text-sm font-black">Student Name</p>
+                        <p id="header-user-info" class="text-[9px] text-slate-400 uppercase font-bold tracking-tight">Grade Info</p>
                     </div>
                     <div onclick="document.getElementById('photo-input').click()" class="profile-container">
                         <img id="header-user-photo" src="https://ui-avatars.com/api/?background=000&color=fff" class="w-10 h-10 rounded-full border-2 border-slate-100 object-cover shadow-sm">
@@ -189,33 +175,33 @@
             </header>
 
             <div class="flex-1 overflow-y-auto p-4 md:p-8" id="content-area">
-                <!-- Dashboard Content (Responsive Grid) -->
+                <!-- Dashboard Content -->
                 <div id="tab-dashboard" class="space-y-6">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 content-grid">
-                        <div class="bg-white p-6 md:p-8 rounded-[2rem] border shadow-sm w-full overflow-hidden">
-                            <h3 class="font-black text-lg uppercase mb-6 flex items-center"><i class="fas fa-chart-line mr-3 text-blue-600"></i>Subject Progress</h3>
-                            <div class="relative h-[250px] md:h-[300px] w-full"><canvas id="overviewChart"></canvas></div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 md:p-8 rounded-[2rem] border shadow-sm">
+                            <h3 class="font-black text-lg uppercase mb-6 flex items-center"><i class="fas fa-chart-line mr-3 text-blue-600"></i>Academic Progress</h3>
+                            <div class="h-[250px] md:h-[300px]"><canvas id="overviewChart"></canvas></div>
                         </div>
-                        <div class="bg-white p-6 md:p-8 rounded-[2rem] border shadow-sm w-full">
-                            <h3 class="font-black text-lg uppercase mb-6 flex items-center"><i class="fas fa-plus-circle mr-3 text-blue-600"></i>Add Record</h3>
+                        <div class="bg-white p-6 md:p-8 rounded-[2rem] border shadow-sm">
+                            <h3 class="font-black text-lg uppercase mb-6 flex items-center"><i class="fas fa-plus-circle mr-3 text-blue-600"></i>New Assessment</h3>
                             <div class="space-y-4">
-                                <input type="text" id="subject-name" placeholder="SUBJECT" class="w-full p-4 bg-slate-50 border rounded-2xl font-bold text-sm outline-none focus:border-blue-500 transition">
+                                <input type="text" id="subject-name" placeholder="SUBJECT" class="w-full p-4 bg-slate-50 border rounded-2xl font-bold text-sm outline-none">
                                 <div class="grid grid-cols-2 gap-4">
-                                    <input type="number" id="subject-score" placeholder="SCORE %" min="0" max="100" class="w-full p-4 bg-slate-50 border rounded-2xl font-bold text-sm outline-none focus:border-blue-500">
+                                    <input type="number" id="subject-score" placeholder="SCORE %" min="0" max="100" class="w-full p-4 bg-slate-50 border rounded-2xl font-bold text-sm outline-none">
                                     <input type="color" id="subject-color" value="#3b82f6" class="w-full h-[54px] p-2 bg-slate-50 border rounded-2xl cursor-pointer">
                                 </div>
-                                <button id="save-mark-btn" class="w-full bg-slate-900 text-white py-4 rounded-2xl font-black uppercase text-xs shadow-lg hover:bg-black transition">Save Record</button>
+                                <button id="save-mark-btn" class="w-full bg-slate-900 text-white py-4 rounded-2xl font-black uppercase text-xs shadow-lg">Save Record</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Planner -->
+                <!-- Planner Content -->
                 <div id="tab-tasks" class="hidden max-w-4xl mx-auto space-y-6">
                     <div class="bg-white p-6 md:p-8 rounded-[2rem] border shadow-sm">
                         <h3 class="font-black text-lg uppercase mb-6 flex items-center"><i class="fas fa-calendar-alt mr-3 text-blue-600"></i>Study Planner</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <input type="text" id="task-input" placeholder="WHAT TO STUDY?" class="md:col-span-2 p-4 bg-slate-50 border rounded-2xl font-bold text-sm outline-none">
+                            <input type="text" id="task-input" placeholder="SUBJECT/TASK" class="md:col-span-2 p-4 bg-slate-50 border rounded-2xl font-bold text-sm outline-none">
                             <input type="time" id="task-start" class="p-4 bg-slate-50 border rounded-2xl font-bold text-sm">
                             <input type="time" id="task-end" class="p-4 bg-slate-50 border rounded-2xl font-bold text-sm">
                             <button id="add-task-btn" class="md:col-span-2 bg-slate-900 text-white py-4 rounded-2xl font-black uppercase text-xs">Schedule Task</button>
@@ -233,7 +219,7 @@
                 <div id="tab-notes" class="hidden space-y-6">
                     <div class="flex justify-between items-center">
                         <h3 class="text-xl font-black uppercase">Study Notes</h3>
-                        <button onclick="openNoteModal()" class="bg-slate-900 text-white px-6 py-3 rounded-xl font-black text-[10px] uppercase shadow-xl">New Note</button>
+                        <button onclick="openNoteModal()" class="bg-slate-900 text-white px-6 py-3 rounded-xl font-black text-[10px] uppercase shadow-xl">Add Note</button>
                     </div>
                     <div id="notes-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
                 </div>
@@ -241,20 +227,16 @@
                 <!-- Settings -->
                 <div id="tab-settings" class="hidden max-w-4xl mx-auto space-y-6">
                     <div class="bg-white p-8 rounded-[2rem] border shadow-sm">
-                        <h3 class="font-black text-lg uppercase mb-8 flex items-center"><i class="fas fa-user-shield mr-3 text-blue-600"></i>Student Profile</h3>
+                        <h3 class="font-black text-lg uppercase mb-8 flex items-center"><i class="fas fa-user-shield mr-3 text-blue-600"></i>Account Details</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div class="space-y-4">
                                 <div class="p-4 bg-slate-50 border rounded-2xl">
-                                    <p class="text-[8px] font-black text-slate-400 uppercase mb-1">Full Name</p>
+                                    <p class="text-[8px] font-black text-slate-400 uppercase mb-1">Student Name</p>
                                     <p id="settings-name" class="font-bold">...</p>
                                 </div>
                                 <div class="p-4 bg-slate-50 border rounded-2xl">
-                                    <p class="text-[8px] font-black text-slate-400 uppercase mb-1">School</p>
-                                    <p id="settings-school" class="font-bold">...</p>
-                                </div>
-                                <div class="p-4 bg-slate-50 border rounded-2xl">
-                                    <p class="text-[8px] font-black text-slate-400 uppercase mb-1">District</p>
-                                    <p id="settings-district" class="font-bold">...</p>
+                                    <p class="text-[8px] font-black text-slate-400 uppercase mb-1">Phone Number</p>
+                                    <p id="settings-phone" class="font-bold">...</p>
                                 </div>
                                 <button onclick="logout()" class="w-full bg-red-50 text-red-600 py-4 rounded-2xl font-black uppercase text-[10px] border border-red-100">Sign Out</button>
                             </div>
@@ -262,16 +244,16 @@
                                 <div class="w-24 h-24 bg-white rounded-full border-4 border-blue-200 mb-4 overflow-hidden shadow-xl">
                                     <img id="settings-photo" src="https://ui-avatars.com/api/?background=000&color=fff" class="w-full h-full object-cover">
                                 </div>
-                                <h4 class="font-black text-blue-900 uppercase">Verified Student</h4>
-                                <p class="text-[9px] font-black text-blue-400 uppercase tracking-widest mt-1">Bye-Study Cloud User</p>
+                                <h4 class="font-black text-blue-900 uppercase tracking-tight">Cloud Secure</h4>
+                                <p class="text-[9px] font-black text-blue-400 uppercase tracking-widest mt-1">Status: Active</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Bottom Navigation (Mobile Only) -->
-            <nav class="md:hidden h-16 bg-white border-t flex items-center justify-around flex-shrink-0 px-2 sticky bottom-0">
+            <!-- Mobile Nav -->
+            <nav class="md:hidden h-16 bg-white border-t flex items-center justify-around flex-shrink-0 px-2">
                 <button onclick="switchTab('dashboard')" class="text-slate-400"><i class="fas fa-th-large text-xl"></i></button>
                 <button onclick="switchTab('tasks')" class="text-slate-400"><i class="fas fa-calendar-alt text-xl"></i></button>
                 <button onclick="switchTab('analytics')" class="text-slate-400"><i class="fas fa-chart-bar text-xl"></i></button>
@@ -286,7 +268,7 @@
         <div class="bg-white w-full max-w-lg rounded-[2.5rem] p-8 shadow-2xl space-y-6 border">
             <h4 class="text-xl font-black uppercase">Create Note</h4>
             <input type="text" id="note-title" placeholder="TITLE" class="w-full p-4 bg-slate-50 rounded-2xl border font-bold outline-none">
-            <textarea id="note-body" rows="6" placeholder="Write your study notes here..." class="w-full p-4 bg-slate-50 rounded-2xl border font-bold outline-none resize-none"></textarea>
+            <textarea id="note-body" rows="6" placeholder="Content..." class="w-full p-4 bg-slate-50 rounded-2xl border font-bold outline-none resize-none"></textarea>
             <div class="grid grid-cols-2 gap-4">
                 <button id="save-note-btn" class="bg-slate-900 text-white py-4 rounded-2xl font-black uppercase text-xs">Save</button>
                 <button onclick="closeNoteModal()" class="bg-slate-100 text-slate-500 py-4 rounded-2xl font-black uppercase text-xs">Cancel</button>
@@ -296,21 +278,20 @@
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken, signOut } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { getFirestore, doc, setDoc, getDoc, collection, onSnapshot, addDoc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         const firebaseConfig = JSON.parse(__firebase_config);
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
         const db = getFirestore(app);
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'bye-study-cloud-final';
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'bye-study-cloud-v3';
 
         let user = null;
         let userData = null;
         let mainChart = null;
         let activeTasks = [];
         let notifiedTasks = new Set();
-        let endedTasks = new Set();
         
         let timerSeconds = 25 * 60;
         let timerInterval = null;
@@ -324,70 +305,10 @@
             setTimeout(() => toast.classList.remove('show'), 6000);
         };
 
-        const playBeep = () => {
-            const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-            const osc = audioCtx.createOscillator();
-            const gn = audioCtx.createGain();
-            osc.connect(gn); gn.connect(audioCtx.destination);
-            osc.frequency.setValueAtTime(880, audioCtx.currentTime);
-            gn.gain.setValueAtTime(0.3, audioCtx.currentTime);
-            osc.start(); 
-            setTimeout(() => { osc.stop(); audioCtx.close(); }, 3000);
-        };
-
-        // Timer Logic
-        const updateTimerDisplay = () => {
-            const mins = Math.floor(timerSeconds / 60).toString().padStart(2, '0');
-            const secs = (timerSeconds % 60).toString().padStart(2, '0');
-            document.getElementById('focus-display').innerText = `${mins}:${secs}`;
-        };
-
-        document.getElementById('focus-toggle-btn').onclick = () => {
-            if (isTimerRunning) {
-                clearInterval(timerInterval);
-                document.getElementById('focus-icon').className = 'fas fa-play';
-                isTimerRunning = false;
-            } else {
-                isTimerRunning = true;
-                document.getElementById('focus-icon').className = 'fas fa-pause';
-                timerInterval = setInterval(() => {
-                    timerSeconds--;
-                    updateTimerDisplay();
-                    if (timerSeconds <= 0) {
-                        clearInterval(timerInterval);
-                        isTimerRunning = false;
-                        timerSeconds = 25 * 60;
-                        updateTimerDisplay();
-                        showToast("SESSION FINISHED", "Time for a 5-minute break!");
-                        playBeep();
-                        document.getElementById('focus-icon').className = 'fas fa-play';
-                    }
-                }, 1000);
-            }
-        };
-
-        // Planner Check
-        const checkPlanner = () => {
-            const now = new Date();
-            const nowStr = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
-            activeTasks.forEach(task => {
-                if (task.done) return;
-                const [h, m] = task.startTime.split(':').map(Number);
-                const st = new Date(); st.setHours(h, m, 0);
-                const diff = (st - now) / 60000;
-                
-                if (diff > 0 && diff <= 5 && !notifiedTasks.has(task.id)) {
-                    showToast("UPCOMING TASK", `${task.text} starts in 5 mins! Alert sent to ${userData.phone}`);
-                    notifiedTasks.add(task.id);
-                }
-            });
-        };
-        setInterval(checkPlanner, 30000);
-
-        // Auth & Password Handling
+        // --- Auth Implementation (Fixed Error) ---
         const initAuth = async () => {
             if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                await signInWithCustomToken(auth, __initial_auth_token);
+                await signInWithCustomToken(auth, __initial_auth_token).catch(() => signInAnonymously(auth));
             } else {
                 await signInAnonymously(auth);
             }
@@ -396,37 +317,62 @@
         onAuthStateChanged(auth, async (u) => {
             if (u) {
                 user = u;
-                const userDoc = await getDoc(doc(db, 'artifacts', appId, 'users', user.uid, 'profile', 'data'));
-                document.getElementById('auth-loading').classList.add('hidden');
-                
-                if (userDoc.exists()) {
-                    userData = userDoc.data();
-                    document.getElementById('lock-welcome').innerText = `Welcome back, ${userData.name.split(' ')[0]}`;
-                    document.getElementById('lock-screen').classList.remove('hidden');
-                } else {
+                try {
+                    const userDoc = await getDoc(doc(db, 'artifacts', appId, 'users', user.uid, 'profile', 'data'));
+                    document.getElementById('auth-loading').classList.add('hidden');
+                    if (userDoc.exists()) {
+                        userData = userDoc.data();
+                        document.getElementById('lock-screen').classList.remove('hidden');
+                        document.getElementById('setup-fields').classList.add('hidden');
+                    } else {
+                        document.getElementById('setup-fields').classList.remove('hidden');
+                        document.getElementById('lock-screen').classList.add('hidden');
+                    }
+                    setupListeners();
+                } catch (e) {
+                    console.error("Auth Error:", e);
                     document.getElementById('setup-fields').classList.remove('hidden');
                 }
-                setupListeners();
             }
         });
 
+        // --- Account Actions ---
+        document.getElementById('start-btn').onclick = async () => {
+            const fname = document.getElementById('login-fname').value.trim();
+            const phone = document.getElementById('login-phone').value.trim();
+            const school = document.getElementById('login-school').value.trim();
+            const pass = document.getElementById('login-pass').value;
+            const confirm = document.getElementById('login-pass-confirm').value;
+
+            if (!fname || !phone || !pass) { showToast("ERROR", "Please fill required fields!"); return; }
+            if (pass !== confirm) { showToast("ERROR", "Passwords do not match!"); return; }
+
+            const profile = { name: fname, phone, school, password: pass, photo: null };
+            await setDoc(doc(db, 'artifacts', appId, 'users', user.uid, 'profile', 'data'), profile);
+            userData = profile;
+            showApp(profile);
+        };
+
         document.getElementById('unlock-btn').onclick = () => {
-            const passInput = document.getElementById('unlock-pass').value;
-            if (passInput === userData.password) {
+            const entry = document.getElementById('unlock-pass').value;
+            if (entry === userData.password) {
                 showApp(userData);
             } else {
-                showToast("ACCESS DENIED", "Incorrect Password!");
+                showToast("DENIED", "Incorrect Password!");
             }
+        };
+
+        window.logout = () => {
+            location.reload(); // Lock again
         };
 
         const showApp = (profile) => {
             document.getElementById('login-screen').classList.add('hidden');
             document.getElementById('main-app').classList.remove('hidden');
             document.getElementById('header-user-name').innerText = profile.name;
-            document.getElementById('header-user-info').innerText = `${profile.school} | ${profile.district}`;
+            document.getElementById('header-user-info').innerText = profile.school || 'Student';
             document.getElementById('settings-name').innerText = profile.name;
-            document.getElementById('settings-school').innerText = profile.school;
-            document.getElementById('settings-district').innerText = profile.district;
+            document.getElementById('settings-phone').innerText = `+94 ${profile.phone}`;
             if (profile.photo) {
                 document.getElementById('header-user-photo').src = profile.photo;
                 document.getElementById('settings-photo').src = profile.photo;
@@ -434,43 +380,7 @@
             window.switchTab('dashboard');
         };
 
-        document.getElementById('start-btn').onclick = async () => {
-            const fname = document.getElementById('login-fname').value.trim();
-            const lname = document.getElementById('login-lname').value.trim();
-            const phone = document.getElementById('login-phone').value.trim();
-            const school = document.getElementById('login-school').value.trim();
-            const district = document.getElementById('login-district').value;
-            const pass = document.getElementById('login-pass').value;
-            const confirm = document.getElementById('login-pass-confirm').value;
-
-            if (!fname || !school || !district || !phone || !pass) { showToast("ERROR", "Fill all details!"); return; }
-            if (pass !== confirm) { showToast("ERROR", "Passwords do not match!"); return; }
-
-            const profile = { name: `${fname} ${lname}`, phone, school, district, password: pass, photo: null };
-            await setDoc(doc(db, 'artifacts', appId, 'users', user.uid, 'profile', 'data'), profile);
-            userData = profile; showApp(profile);
-        };
-
-        window.logout = async () => {
-            location.reload(); // Simple reload to relock
-        };
-
-        // Navigation
-        window.switchTab = (tabId) => {
-            ['dashboard', 'tasks', 'analytics', 'notes', 'settings'].forEach(t => {
-                const el = document.getElementById(`tab-${t}`);
-                if (el) el.classList.add('hidden');
-                const nav = document.getElementById(`nav-${t}`);
-                if (nav) nav.classList.remove('active-tab');
-            });
-            const targetTab = document.getElementById(`tab-${tabId}`);
-            if (targetTab) targetTab.classList.remove('hidden');
-            const nav = document.getElementById(`nav-${tabId}`);
-            if (nav) nav.classList.add('active-tab');
-            document.getElementById('current-tab-title').innerText = tabId.toUpperCase();
-        };
-
-        // Data Listeners
+        // --- Feature Listeners ---
         const setupListeners = () => {
             if (!user) return;
             onSnapshot(collection(db, 'artifacts', appId, 'users', user.uid, 'marks'), (snap) => {
@@ -486,6 +396,7 @@
             });
         };
 
+        // --- Rendering Logic ---
         const renderDashboard = (marks) => {
             const ctx = document.getElementById('overviewChart');
             if (!ctx) return;
@@ -502,7 +413,7 @@
                 data: {
                     labels: labels,
                     datasets: [{
-                        label: 'Average Score %',
+                        label: 'Average %',
                         data: labels.map(l => grouped[l].sum / grouped[l].count),
                         backgroundColor: labels.map(l => grouped[l].color),
                         borderRadius: 12
@@ -513,24 +424,21 @@
         };
 
         const renderTasks = (tasks) => {
-            const list = document.getElementById('task-list');
-            if(!list) return;
-            list.innerHTML = tasks.sort((a,b) => a.startTime.localeCompare(b.startTime)).map(t => `
-                <li class="flex items-center justify-between p-4 bg-white border rounded-3xl shadow-sm group">
+            document.getElementById('task-list').innerHTML = tasks.map(t => `
+                <li class="flex items-center justify-between p-4 bg-white border rounded-3xl shadow-sm">
                     <div class="flex items-center space-x-3">
                         <input type="checkbox" ${t.done ? 'checked' : ''} onchange="toggleTask('${t.id}', ${t.done})" class="w-5 h-5 rounded accent-blue-600">
                         <div>
                             <p class="font-bold text-sm ${t.done ? 'line-through text-slate-300' : ''}">${t.text}</p>
-                            <p class="text-[8px] font-black text-slate-400 uppercase tracking-widest">${t.startTime} - ${t.endTime}</p>
+                            <p class="text-[8px] font-black text-slate-400 uppercase">${t.startTime} - ${t.endTime}</p>
                         </div>
                     </div>
-                    <button onclick="deleteDocById('tasks', '${t.id}')" class="text-slate-200 hover:text-red-400 p-2"><i class="fas fa-trash-alt"></i></button>
+                    <button onclick="deleteDocById('tasks', '${t.id}')" class="text-slate-200 hover:text-red-400"><i class="fas fa-trash-alt"></i></button>
                 </li>`).join('');
         };
 
         const renderAnalytics = (marks) => {
             const container = document.getElementById('subject-groups-container');
-            if(!container) return;
             const subjects = [...new Set(marks.map(m => m.subject))];
             container.innerHTML = subjects.map(sub => {
                 const sMarks = marks.filter(m => m.subject === sub);
@@ -547,19 +455,29 @@
         };
 
         const renderNotes = (notes) => {
-            const grid = document.getElementById('notes-grid');
-            if(!grid) return;
-            grid.innerHTML = notes.map(n => `
-                <div class="bg-white p-6 rounded-[2rem] border shadow-sm flex flex-col justify-between h-full">
+            document.getElementById('notes-grid').innerHTML = notes.map(n => `
+                <div class="bg-white p-6 rounded-[2rem] border shadow-sm h-full flex flex-col justify-between">
                     <div>
                         <h4 class="font-black uppercase text-xs text-blue-600 mb-2">${n.title}</h4>
-                        <p class="text-xs text-slate-500 font-semibold line-clamp-4 leading-relaxed">${n.body}</p>
+                        <p class="text-xs text-slate-500 line-clamp-4">${n.body}</p>
                     </div>
-                    <button onclick="deleteDocById('notes', '${n.id}')" class="mt-4 text-[9px] font-black uppercase text-slate-300 hover:text-red-400 text-left">Delete Note</button>
+                    <button onclick="deleteDocById('notes', '${n.id}')" class="mt-4 text-[9px] font-black text-slate-300 hover:text-red-400">DELETE</button>
                 </div>`).join('');
         };
 
-        // CRUD
+        // --- Core UI Actions ---
+        window.switchTab = (tabId) => {
+            ['dashboard', 'tasks', 'analytics', 'notes', 'settings'].forEach(t => {
+                document.getElementById(`tab-${t}`).classList.add('hidden');
+                const nav = document.getElementById(`nav-${t}`);
+                if(nav) nav.classList.remove('active-tab');
+            });
+            document.getElementById(`tab-${tabId}`).classList.remove('hidden');
+            const nav = document.getElementById(`nav-${tabId}`);
+            if(nav) nav.classList.add('active-tab');
+            document.getElementById('current-tab-title').innerText = tabId.toUpperCase();
+        };
+
         document.getElementById('save-mark-btn').onclick = async () => {
             const sub = document.getElementById('subject-name').value.trim().toUpperCase();
             const score = document.getElementById('subject-score').value;
@@ -567,7 +485,7 @@
             await addDoc(collection(db, 'artifacts', appId, 'users', user.uid, 'marks'), { 
                 subject: sub, score, color: document.getElementById('subject-color').value, timestamp: new Date() 
             });
-            document.getElementById('subject-name').value = ''; 
+            document.getElementById('subject-name').value = '';
         };
 
         document.getElementById('add-task-btn').onclick = async () => {
@@ -596,19 +514,7 @@
         window.toggleTask = async (id, cur) => await updateDoc(doc(db, 'artifacts', appId, 'users', user.uid, 'tasks', id), { done: !cur });
         window.deleteDocById = async (coll, id) => await deleteDoc(doc(db, 'artifacts', appId, 'users', user.uid, coll, id));
 
-        document.getElementById('photo-input').onchange = (e) => {
-            const file = e.target.files[0];
-            if (!file) return;
-            const reader = new FileReader();
-            reader.onload = async (event) => {
-                const b64 = event.target.result;
-                document.getElementById('header-user-photo').src = b64;
-                document.getElementById('settings-photo').src = b64;
-                await updateDoc(doc(db, 'artifacts', appId, 'users', user.uid, 'profile', 'data'), { photo: b64 });
-            };
-            reader.readAsDataURL(file);
-        };
-
+        // Start Auth
         initAuth();
     </script>
 </body>
