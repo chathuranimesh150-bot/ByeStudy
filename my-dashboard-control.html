@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bye-Study | Secure Admin Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore-compat.js"></script>
+</head>
+<body class="bg-slate-50 font-sans">
+
+    <div id="login-section" class="fixed inset-0 bg-slate-900 flex items-center justify-center p-6 z-[1000]">
+        <div class="bg-white p-8 rounded-3xl shadow-2xl w-full max-w-md text-center">
+            <h2 class="text-2xl font-black uppercase mb-6">Admin Login</h2>
+            <input type="email" id="admin-email" placeholder="ADMIN EMAIL" class="w-full p-4 bg-slate-100 rounded-xl mb-4 outline-none font-bold">
+            <input type="password" id="admin-password" placeholder="PASSWORD" class="w-full p-4 bg-slate-100 rounded-xl mb-6 outline-none font-bold">
+            <button onclick="loginAdmin()" class="w-full bg-blue-600 text-white py-4 rounded-xl font-black uppercase tracking-widest shadow-lg">Login</button>
+            <p id="error-msg" class="text-red-500 mt-4 text-xs font-bold hidden">Invalid Credentials!</p>
+        </div>
+    </div>
+
+    <div id="admin-dashboard" class="hidden p-10 max-w-6xl mx-auto">
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-3xl font-black uppercase">Registered Users</h1>
+            <button onclick="logoutAdmin()" class="bg-red-500 text-white px-6 py-2 rounded-xl font-bold text-xs uppercase">Logout</button>
+        </div>
+        
+        <div class="bg-white rounded-3xl border shadow-sm overflow-hidden">
+            <table class="w-full text-left">
+                <thead class="bg-slate-900 text-white uppercase text-[10px] font-bold tracking-widest">
+                    <tr>
+                        <th class="px-6 py-4">Full Name</th>
+                        <th class="px-6 py-4">School</th>
+                        <th class="px-6 py-4">District</th>
+                        <th class="px-6 py-4">Reg Date</th>
+                    </tr>
+                </thead>
+                <tbody id="user-table-body" class="text-sm"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "your-project.firebaseapp.com",
+            projectId: "your-project-id",
+            storageBucket: "your-project.appspot.com",
+            messagingSenderId: "your-id",
+            appId: "your-app-id"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        const appId = 'bye-study-pro';
+
+        // Login Function
+        function loginAdmin() {
+            const email = document.getElementById('admin-email').value;
+            const pass = document.getElementById('admin-password').value;
+            
+            auth.signInWithEmailAndPassword(email, pass)
+                .then(() => {
+                    document.getElementById('login-section').classList.add('hidden');
+                    document.getElementById('admin-dashboard').classList.remove('hidden');
+                    fetchUsers();
+                })
+                .catch(err => {
+                    document.getElementById('error-msg').classList.remove('hidden');
+                });
+        }
+
+        // Fetch Users Function
+        async function fetchUsers() {
+            const tableBody = document.getElementById('user-table-body');
+            tableBody.innerHTML = ""; // Clear old data
+
+            db.collection("artifacts").doc(appId).collection("users").get().then((querySnapshot) => {
+                querySnapshot.forEach(async (userDoc) => {
+                    const profile = await db.collection("artifacts").doc(appId).collection("users").doc(userDoc.id).collection("profile").doc("data").get();
+                    
+                    if (profile.exists()) {
+                        const data = profile.data();
+                        const row = `
+                            <tr class="border-b hover:bg-slate-50 font-bold text-slate-700 transition">
+                                <td class="px-6 py-4">${data.name}</td>
+                                <td class="px-6 py-4 font-normal">${data.school}</td>
+                                <td class="px-6 py-4 uppercase text-blue-600 text-xs">${data.district}</td>
+                                <td class="px-6 py-4 text-[10px] text-slate-400">
+                                    ${data.registeredAt ? data.registeredAt.toDate().toLocaleDateString() : 'N/A'}
+                                </td>
+                            </tr>
+                        `;
+                        tableBody.innerHTML += row;
+                    }
+                });
+            });
+        }
+
+        function logoutAdmin() {
+            auth.signOut().then(() => location.reload());
+        }
+    </script>
+</body>
+</html>
